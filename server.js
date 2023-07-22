@@ -7,14 +7,13 @@ dotenv.config()
 const app = express()
 dbConnection();
 
-const cors = require('cors')
-corsOptions={origin: process.env.CLIENT_URI, credentials:true}
-app.use(cors(corsOptions))
+
 
 app.use(express.json())
 app.use(cookieParser())
 
 app.use((req, res, next) => {
+  console.log(process.env.CLIENT_URI)
     res.header('Access-Control-Allow-Origin', process.env.CLIENT_URI);
     res.header('Access-Control-Allow-Credentials', true);
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
