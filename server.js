@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser')
 
 
 dotenv.config()
-const app = express()
+exports.app = express()
 dbConnection();
 
 
