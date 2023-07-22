@@ -10,7 +10,7 @@ const userSchema = mongoose.Schema({
 
 userSchema.methods.sendJWT=function(req, res, next){
     const token = jwt.sign(this.id, process.env.JWT_SECRET)
-    res.cookie('token', token, {httpOnly: true, sameSite: 'none', domain:'memebait.onrender.com'})
+    res.cookie('token', token, {httpOnly: true, sameSite: 'none', domain:'.netlify.app', secure:true})
     res.status(200).json({
       success:true,
       message: 'token sent'
