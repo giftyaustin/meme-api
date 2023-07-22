@@ -13,7 +13,7 @@ dbConnection();
 
 app.use(express.json())
 app.use(cors({
-  origin: [process.env.CLIENT_URI, 'http://localhost:3000'],
+  origin: [`${process.env.CLIENT_URI}/*`, 'http://localhost:3000'],
   methods:["GET", "POST", "PUT", "DELETE"],
   credentials:true
 }))
@@ -28,7 +28,7 @@ const { userRouter } = require('./Routers/userRouter')
 
 app.get('/', (req, res)=>{
   res.json({success:true, message:'working'})
-  
+
 })
 app.use('/', userRouter)
 app.use('/signup', signupRouter)
