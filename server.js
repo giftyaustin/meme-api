@@ -39,6 +39,6 @@ app.use('/image', imageRouter)
 
 
 app.use(errorHandler)
-app.listen(5000, ()=>{
+app.listen(5050, ()=>{
     console.log("http://localhost:5000")
 })
