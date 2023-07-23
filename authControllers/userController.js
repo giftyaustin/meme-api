@@ -1,7 +1,7 @@
 const { tryCatch } = require("../errorHandling/tryCatch");
 
 exports.setGuest = tryCatch(async (req, res, next)=>{
-    res.cookie('token', 'q', {httpOnly:true, sameSite:'none', domain:'localhost', expries:Date(Date.now())})
+    res.cookie('token', 'q', {secure: true ,httpOnly:true, sameSite:'none', expries:Date(Date.now())})
     res.json({
         success:true,
     })
