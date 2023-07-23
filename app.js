@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser')
 
 
 dotenv.config()
-exports.app = express()
+const app = express()
 dbConnection();
 
 
@@ -39,6 +39,6 @@ app.use('/image', imageRouter)
 
 
 app.use(errorHandler)
-app.listen(5050, ()=>{
+app.listen(process.env.PORT || 5050, ()=>{
     console.log("http://localhost:5000")
 })
